@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class temperatura{
+    public static void main(String args[]){
+        double tc, tf, tk;
+        System.out.print("Digite a temperatura em Celsius: ");
+        Scanner entrada = new Scanner(System.in);
+        tc = entrada.nextDouble();
+        entrada.close();
+        tf = 1.8 * tc + 32;
+        tk = tc + 273.15;
+        System.out.printf("Temperatura em Celsius: %.1f oC%n", tc);
+        System.out.printf("Temperatura em Fahrenheit: %.1f oF%n", tf);
+        System.out.printf("Temperatura em Kelvin: %.2f K%n", tk);
+    }
+}
