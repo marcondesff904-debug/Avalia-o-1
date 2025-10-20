@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class notastsc {
+    public static void main(String args[]) {
+        double notas[] = new double[8];
+        Scanner entrada = new Scanner(System.in);
+        double nBim[] = new double[4];
+        double nSem[] = new double[2];
+        int i;
+
+        for (i = 0; i < 8; i++) {
+            System.out.println("Digite a " + (i + 1) + " a nota\n");
+            notas[i] = entrada.nextDouble();
+        }
+        entrada.close();
+
+        for (i = 0; i < 4; i++) {
+            nBim[i] = (notas[2 * i] + notas[2 * i + 1]) / 2;
+        }
+
+        nSem[0] = (nBim[0] + nBim[1]) / 2;
+        nSem[1] = (nBim[2] + nBim[3]) / 2;
+
+        System.out.printf("1o bimestre: %.2f%n", nBim[0]);
+        System.out.printf("2o bimestre: %.2f%n", nBim[1]);
+        System.out.printf("1o semestre: %.2f%n", nSem[0]);
+        System.out.println("--------------------");
+        System.out.printf("3o bimestre: %.2f%n", nBim[2]);
+        System.out.printf("4o bimestre: %.2f%n", nBim[3]);
+        System.out.printf("2o semestre: %.2f%n", nSem[1]);
+        System.out.println("--------------------");
+        System.out.printf("Media final: %.2f%n", (nSem[0] + nSem[1]) / 2);
+    }
+}
